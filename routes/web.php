@@ -25,3 +25,5 @@ Route::put('/posts/{post}', 'PostController@update');
 Route::delete('/posts/{post}', 'PostController@delete');
 
 Route::get('/users/{user}', 'UserController@index');
+
+Route::get('/training_events/{training_event}', 'Training_eventController@index');

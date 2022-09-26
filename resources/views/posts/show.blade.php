@@ -7,7 +7,18 @@
             <B>トレーニングのリストを載せる</B>
         </div>
         <p class='body'>{{ $post->body }}</p>
-        <h6 class='tags'>tag</h6>
+        
+        <div class="tags">
+            <h2>training_events</h2>
+            <select name="post[training_event_id]">
+                @foreach($training_events as $training_event)
+                    <option value="{{ $training_event->id }}">{{ $training_event->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        
+        <a href="">{{ $post->training_event->name }}</a>
+        
         <h6 class='created_at'>{{ $post->created_at }}</h6>
         <a class='user_name' href="/users/{{ $post->user->id }}">{{ $post->user->name }}</a>
     </div>
