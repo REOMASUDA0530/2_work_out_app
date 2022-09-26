@@ -1,12 +1,15 @@
 @extends('layouts.app')
 @section('content')
     <div class='post'>
-        <h2 class='title'>{{ $post->title }}</h2>
-        <h3 class='training_list'>tore-ninglist</h3>
+        <h1 class='title'>{{ $post->title }}</h1>
+        <div class='training_list'>
+            <h2>TRAINING LIST</h>
+            <B>トレーニングのリストを載せる</B>
+        </div>
         <p class='body'>{{ $post->body }}</p>
-        <h6 class='user_id'>{{ $post->user_id }}</h6>
         <h6 class='tags'>tag</h6>
         <h6 class='created_at'>{{ $post->created_at }}</h6>
+        <a class='user_name' href="/users/{{ $post->user->id }}">{{ $post->user->name }}</a>
     </div>
     
     <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
