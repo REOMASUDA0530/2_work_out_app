@@ -16,6 +16,7 @@ class posts_table_seeder extends Seeder
             'body' => Str::random(13000),
             
             'user_id' => random_int(1,10),
+            'training_event_id' => random_int(1, 10),
         ];
             
         DB::table('posts')->insert($param);
