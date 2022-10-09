@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBodyPartsTable extends Migration
+class AddBodyPartsToTrainingEventsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateBodyPartsTable extends Migration
      */
     public function up()
     {
-        Schema::create('body_parts', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name', 50);
+        Schema::table('training_events', function (Blueprint $table) {
+            $table->integer('body_part_id')->unsigned();
         });
     }
 
@@ -26,6 +25,8 @@ class CreateBodyPartsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('body_parts');
+        Schema::table('training_events', function (Blueprint $table) {
+            //
+        });
     }
 }

@@ -3,21 +3,15 @@
     <div class='post'>
         <h1 class='title'>{{ $post->title }}</h1>
         <div class='training_list'>
-            <h2>TRAINING LIST</h>
+            <h2>TRAINING LIST</h><br>
             <B>トレーニングのリストを載せる</B>
         </div>
         <p class='body'>{{ $post->body }}</p>
         
         <div class="tags">
             <h2>training_events</h2>
-            <select name="post[training_event_id]">
-                @foreach($training_events as $training_event)
-                    <option value="{{ $training_event->id }}">{{ $training_event->name }}</option>
-                @endforeach
-            </select>
+            <a href="/training_events/{{ $post->training_event->id }}">{{ $post->training_event->name }}</a>
         </div>
-        
-        <a href="">{{ $post->training_event->name }}</a>
         
         <h6 class='created_at'>{{ $post->created_at }}</h6>
         <a class='user_name' href="/users/{{ $post->user->id }}">{{ $post->user->name }}</a>

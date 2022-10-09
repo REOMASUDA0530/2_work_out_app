@@ -13,13 +13,16 @@ class PostController extends Controller
     {
         return view('posts/index')->with(
             ['posts' => $post->getPaginateByLimit()],
-            ['users' => $user]
+            ['users' => $user],
             );
     }
     
-    public function show(Post $post)
+    public function show(Post $post, Training_event $training_event)
     {
-        return view('posts/show')->with(['post' => $post]);
+        return view('posts/show')->with(
+            ['post' => $post],
+            ['training_events' => $training_event->get()]
+            );
     }
     
     public function create(User $user, Training_event $training_event)

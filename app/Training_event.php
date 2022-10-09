@@ -15,4 +15,9 @@ class Training_event extends Model
     {
         return $this->posts()->with('training_event')->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
+    
+    public function body_part()
+    {
+        return $this->belongsTo(Body_part::class);
+    }
 }

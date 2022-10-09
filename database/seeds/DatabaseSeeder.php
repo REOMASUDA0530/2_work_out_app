@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             posts_table_seeder::class,
             posts_table_seeder::class,
             users_table_seeder::class,
+            training_events_table_seeder::class,
         ]);
     }
 }
