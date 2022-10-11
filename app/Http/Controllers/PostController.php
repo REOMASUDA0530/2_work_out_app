@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\User;
 use App\Training_event;
+use App\Body_part;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -17,20 +19,27 @@ class PostController extends Controller
             );
     }
     
-    public function show(Post $post, Training_event $training_event)
+    public function show(Post $post, Training_event $training_event, Body_part $body_part)
     {
         return view('posts/show')->with(
             ['post' => $post],
-            ['training_events' => $training_event->get()]
+            ['training_events' => $training_event->get()],
+            ['body_part' => $body_part->get()]
             );
     }
     
-    public function create(User $user, Training_event $training_event)
+    public function create(User $user)
     {
         return view('posts/create')->with(
-            ['users' => $user->get()],
-            ['training_events' => $training_event->get()]
+            ['users' => $user->get()]
             );
+    }
+    
+    public function store(Request $request, Post $post)
+    {
+        $input = $request;
+        $post->fill($input)->save();
+        return redirect('/posts/' . $post->user_id . '/' . $post->id);
     }
     
     public function delete(Post $post)
