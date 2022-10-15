@@ -13,12 +13,22 @@
             <textarea name="post[body]" placeholder="BODY"></textarea>
         </div>
         
-        <div class='tags'>
-            <p>tagを表示</p>
-            <input type="text" name='post[training_event_id]' value=1>
+        <div class='training_events'>
+            <h2>ADD YOUR TRAINING</h2>
+            <h3>TYPE</h3>
+            <select name='post[training_event_id]'>
+                @foreach ($training_events as $training_event)
+                    <option value={{ $training_event->id }}>{{ $training_event->name }}</option>
+                @endforeach
+            </select>
+            <h3>REPS</h3>
+            <input type='number' name='post[reps]'>
+            <h3>SETS</h3>
+            <input type='number' name='post[sets]'>
         </div>
         
         <div class='user_id'>
+            <p>user id 映したくない</p>
             <input type='number' name='post[user_id]' value={{ Auth::id() }}>
         </div>
         <input type="submit" value="SUBMIT"/>

@@ -11,7 +11,7 @@ class Training_event extends Model
         return $this->hasMany('App\Post');  
     }
     
-    public function getByTraining_event(int $limit_count = 5)
+    public function getTraining_event(int $limit_count = 100)
     {
         return $this->posts()->with('training_event')->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
