@@ -19,19 +19,17 @@ class PostController extends Controller
             );
     }
     
-    public function show(Post $post, Training_event $training_event, Body_part $body_part)
+    public function show(Post $post)
     {
         return view('posts/show')->with(
-            ['post' => $post],
-            ['training_events' => $training_event->get()],
-            ['body_part' => $body_part->get()]
+            ['post' => $post]
             );
     }
     
-    public function create(User $user)
+    public function create(Training_event $training_event)
     {
         return view('posts/create')->with(
-            ['users' => $user->get()]
+            ['training_events' => $training_event->get()]
             );
     }
     
@@ -39,7 +37,7 @@ class PostController extends Controller
     {
         $input = $request['post'];
         $post->fill($input)->save();
-        return redirect('/posts/' . $post->user_id . '/' . $post->id);
+        return redirect('/posts/' . $post->id);
     }
     
     public function delete(Post $post)

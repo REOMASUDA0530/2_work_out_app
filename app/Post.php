@@ -11,7 +11,9 @@ class Post extends Model
         'title',
         'body',
         'user_id',
-        'training_event_id'
+        'training_event_id',
+        'reps',
+        'sets'
     ];
     
     public function getPaginateByLimit(int $limit_count = 10)

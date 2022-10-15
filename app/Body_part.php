@@ -10,5 +10,10 @@ class Body_part extends Model
     {
         return $this->hasMany(Training_event::class);
     }
+    public function getBody_part(int $limit_count = 5)
+    {
+        return $this->training_events()->with('body_part')->orderBy('id', 'DESC')->paginate($limit_count);
+    }
+
     
 }
