@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class users_table_seeder extends Seeder
+class usersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +12,7 @@ class users_table_seeder extends Seeder
     public function run()
     {
         $param = [
-            'name' => Str::random(20),
+            'name' => Str::random(10),
             'email' => Str::random(5).'@gmail.com',
             'password' => Str::random(10),
         ];

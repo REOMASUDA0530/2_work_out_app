@@ -12,12 +12,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            areas_seeder::class,
-            body_parts_table_seeder::class,
-            posts_table_seeder::class,
-            posts_table_seeder::class,
-            users_table_seeder::class,
-            training_events_table_seeder::class,
+            usersTableSeeder::class,
+            typesTableSeeder::class,
+            eventsTableSeeder::class,
+            postsTableSeeder::class,
+           
         ]);
     }
 }

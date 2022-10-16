@@ -14,11 +14,11 @@
                 <h6 class='created_at'>{{ $post->created_at }}</h6>
             </div>
             <h3>TYPE</h3>
-            <a href="/training_events/{{ $post->training_event->id }}">{{ $post->training_event->name }}</a>
+            <a href="/types/{{ $post->event->type->id }}">{{ $post->event->type->name }}</a>
             <h3>REPS</h3>
-            <p class='reps'>{{ $post->reps }}</p>
+            <p class='reps'>{{ $post->event->reps }}</p>
             <h3>SETS</h3>
-            <p class='sets'>{{ $post->sets }}</p>
+            <p class='sets'>{{ $post->event->sets }}</p>
         @endforeach
     </div>
     <div class='paginate'>

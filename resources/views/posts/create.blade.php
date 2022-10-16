@@ -16,9 +16,9 @@
         <div class='training_events'>
             <h2>ADD YOUR TRAINING</h2>
             <h3>TYPE</h3>
-            <select name='post[training_event_id]'>
-                @foreach ($training_events as $training_event)
-                    <option value={{ $training_event->id }}>{{ $training_event->name }}</option>
+            <select name='post[event_id]'>
+                @foreach ($types as $type)
+                    <option value={{ $type->id }}>{{ $type->name }}</option>
                 @endforeach
             </select>
             <h3>REPS</h3>

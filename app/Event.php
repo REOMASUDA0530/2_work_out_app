@@ -8,13 +8,13 @@ class Event extends Model
 {
     public function post()
     {
-        return $this->belongsTo(Post::class);
+        return $this->belongsTo('App\Post');
         
     }
     
     public function type()
     {
-        return $this->belongsTo(Type::class);
+        return $this->hasOne('App\Type');
         
     }
 }

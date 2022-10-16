@@ -10,10 +10,8 @@ class Post extends Model
     protected $fillable = [
         'title',
         'body',
-        'user_id',
-        'training_event_id',
-        'reps',
-        'sets'
+        'user_id'
+        
     ];
     
     public function getPaginateByLimit(int $limit_count = 10)
@@ -27,15 +25,15 @@ class Post extends Model
         
     }
     
-    public function training_event()
-    {
-        return $this->belongsTo('App\Training_event');
-    }
-    
     public function events()
     {
-        return $this->hasMany(Event::class);
+        return $this->hasMany('App\Event');
         
+    }
+    
+    public function types()
+    {
+        return $this->hasManyThrough('App\Event', 'App\Type');
     }
 }
 

@@ -8,7 +8,7 @@ class Type extends Model
 {
     public function events()
     {
-        return $this->hasMany(Event::class);
+        return $this->belongsToMany('App\Event');
         
     }
 }
