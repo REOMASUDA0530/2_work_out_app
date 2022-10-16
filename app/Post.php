@@ -31,5 +31,11 @@ class Post extends Model
     {
         return $this->belongsTo('App\Training_event');
     }
+    
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+        
+    }
 }
 
