@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddEventIdToPostsTable extends Migration
+class AddPostIdToEventsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddEventIdToPostsTable extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->integer('event_id')->unsigned();
+        Schema::table('events', function (Blueprint $table) {
+            $table->integer('post_id')->unsigned();
         });
     }
 
@@ -25,7 +25,7 @@ class AddEventIdToPostsTable extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
+        Schema::table('events', function (Blueprint $table) {
             //
         });
     }

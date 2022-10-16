@@ -4,18 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\User;
-use App\Training_event;
-use App\Body_part;
+use App\Event;
+use App\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
-    public function index(Post $post, User $user)
+    public function index(Post $post, User $user, Event $event, Type $type)
     {
         return view('posts/index')->with(
             ['posts' => $post->getPaginateByLimit()],
             ['users' => $user],
+            ['events' => $event],
+            ['types' => $type],
             );
     }
     
@@ -26,10 +28,10 @@ class PostController extends Controller
             );
     }
     
-    public function create(Training_event $training_event)
+    public function create(Type $type)
     {
         return view('posts/create')->with(
-            ['training_events' => $training_event->get()]
+            ['types' => $type->get()]
             );
     }
     

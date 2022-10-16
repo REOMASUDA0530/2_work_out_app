@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddTypeIdToEventsTable extends Migration
+class AddEventIdToTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddTypeIdToEventsTable extends Migration
      */
     public function up()
     {
-        Schema::table('events', function (Blueprint $table) {
-            $table->integer('type_id')->unsigned();
+        Schema::table('types', function (Blueprint $table) {
+            $table->integer('event_id')->unsigned();
         });
     }
 
@@ -25,7 +25,7 @@ class AddTypeIdToEventsTable extends Migration
      */
     public function down()
     {
-        Schema::table('events', function (Blueprint $table) {
+        Schema::table('types', function (Blueprint $table) {
             //
         });
     }

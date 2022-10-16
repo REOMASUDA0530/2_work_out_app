@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class posts_table_seeder extends Seeder
+class postsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,11 +12,10 @@ class posts_table_seeder extends Seeder
     public function run()
     {
         $param = [
-            'title' => Str::random(20),
-            'body' => Str::random(13000),
+            'title' => Str::random(10),
+            'body' => Str::random(50),
             
-            'user_id' => random_int(1,10),
-            'training_event_id' => random_int(1, 10),
+            'user_id' => 1,
         ];
             
         DB::table('posts')->insert($param);
