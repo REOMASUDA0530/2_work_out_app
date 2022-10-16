@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddBodyPartsToTrainingEventsTable extends Migration
+class AddEventIdToPostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddBodyPartsToTrainingEventsTable extends Migration
      */
     public function up()
     {
-        Schema::table('training_events', function (Blueprint $table) {
-            $table->integer('body_part_id')->unsigned();
+        Schema::table('posts', function (Blueprint $table) {
+            $table->integer('event_id')->unsigned();
         });
     }
 
@@ -25,7 +25,7 @@ class AddBodyPartsToTrainingEventsTable extends Migration
      */
     public function down()
     {
-        Schema::table('training_events', function (Blueprint $table) {
+        Schema::table('posts', function (Blueprint $table) {
             //
         });
     }

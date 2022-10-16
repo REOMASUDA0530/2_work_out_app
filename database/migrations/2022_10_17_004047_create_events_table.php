@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddRepsAndSetsToPostsTable extends Migration
+class CreateEventsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class AddRepsAndSetsToPostsTable extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->integer('reps');
             $table->integer('sets');
+            $table->timestamps();
         });
     }
 
@@ -26,8 +28,6 @@ class AddRepsAndSetsToPostsTable extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('events');
     }
 }
