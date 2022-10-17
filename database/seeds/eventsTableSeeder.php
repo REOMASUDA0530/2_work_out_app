@@ -12,10 +12,10 @@ class eventsTableSeeder extends Seeder
    public function run()
     {
         $param = [
+            'name' => Str::random(5),
             'reps' => 1,
             'sets' => 1,
             
-            'post_id' => 1,
         ];
             
         DB::table('events')->insert($param);

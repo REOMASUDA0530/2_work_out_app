@@ -11,13 +11,10 @@ use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
-    public function index(Post $post, User $user, Event $event, Type $type)
+    public function index(Post $post)
     {
         return view('posts/index')->with(
             ['posts' => $post->getPaginateByLimit()],
-            ['users' => $user],
-            ['events' => $event],
-            ['types' => $type],
             );
     }
     
