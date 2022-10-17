@@ -13,18 +13,18 @@
             <textarea name="post[body]" placeholder="BODY"></textarea>
         </div>
         
-        <div class='training_events'>
+        <div class='events'>
             <h2>ADD YOUR TRAINING</h2>
             <h3>TYPE</h3>
-            <select name='post[event_id]'>
+            <select name='event[name]'>
                 @foreach ($types as $type)
                     <option value={{ $type->id }}>{{ $type->name }}</option>
                 @endforeach
             </select>
             <h3>REPS</h3>
-            <input type='number' name='post[reps]'>
+            <input type='number' name='event[reps]'>
             <h3>SETS</h3>
-            <input type='number' name='post[sets]'>
+            <input type='number' name='event[sets]'>
         </div>
         
         <div class='user_id'>

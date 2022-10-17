@@ -3,21 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
-    protected $fillable = [
-        'title',
-        'body',
-        'user_id'
-        
-    ];
-    
-    public function getPaginateByLimit(int $limit_count = 10)
-    {
-        return $this::with('user') ->orderBy('updated_at', 'DESC') -> paginate($limit_count);
-    }
     
     public function user()
     {
@@ -27,7 +15,7 @@ class Post extends Model
     
     public function events()
     {
-        return $this->hasMany('App\Event');
+        return $this->belongsToMany('App\Event');
         
     }
     
@@ -35,5 +23,10 @@ class Post extends Model
     {
         return $this->hasManyThrough('App\Event', 'App\Type');
     }
+    
+    public function getPaginateByLimit(int $limit_count = 10)
+    {
+        return $this::with('user') ->orderBy('updated_at', 'DESC') -> paginate($limit_count);
+    }
+    
 }
-

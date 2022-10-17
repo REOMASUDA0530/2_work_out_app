@@ -6,9 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
+    protected $fillable = [
+        'name',
+        'reps',
+        'sets',
+        
+    ];
+    
+    
     public function post()
     {
-        return $this->belongsTo('App\Post');
+        return $this->belongsToMany('App\Post');
         
     }
     
