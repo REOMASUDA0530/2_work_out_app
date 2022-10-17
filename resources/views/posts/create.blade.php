@@ -15,21 +15,25 @@
         
         <div class='events'>
             <h2>ADD YOUR TRAINING</h2>
+            
             <h3>TYPE</h3>
-            <select name='event[name]'>
-                @foreach ($types as $type)
-                    <option value={{ $type->id }}>{{ $type->name }}</option>
-                @endforeach
-            </select>
-            <h3>REPS</h3>
-            <input type='number' name='event[reps]'>
-            <h3>SETS</h3>
-            <input type='number' name='event[sets]'>
+            
+            {{--eventsを作る--}}
+            {{--event[name]の入力--}}
+            
+            <div class='add_event'>
+                <select name='events_array[]'>
+                    @foreach ($types as $type)
+                        <option value={{ $type->id }}>{{ $type->name }}</option>
+                    @endforeach
+                </select>
+            
+                <input id='add' type='button' value='ADD'>
+            </div> 
         </div>
         
         <div class='user_id'>
-            <p>user id 映したくない</p>
-            <input type='number' name='post[user_id]' value={{ Auth::id() }}>
+            <input type='hidden' name='post[user_id]' value={{ Auth::id() }}>
         </div>
         <input type="submit" value="SUBMIT"/>
     </form>

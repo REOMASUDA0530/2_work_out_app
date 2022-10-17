@@ -34,8 +34,12 @@ class PostController extends Controller
     
     public function store(Request $request, Post $post)
     {
-        $input = $request['post'];
-        $post->fill($input)->save();
+        $input_post = $request['post'];
+        $input_events = $request->event_array;
+        
+        $post->fill($input_post)->save();
+        
+        $post->events()->attach($input_events);
         return redirect('/posts/' . $post->id);
     }
     
