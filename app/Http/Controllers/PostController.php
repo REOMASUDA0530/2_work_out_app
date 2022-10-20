@@ -25,21 +25,24 @@ class PostController extends Controller
             );
     }
     
-    public function create(Event $event)
+    public function create(Type $type)
     {
         return view('posts/create')->with(
-            ['events' => $event->get()]
+            ['types' => $type->get()]
             );
     }
     
-    public function store(Request $request, Post $post)
+    public function store(Request $request, Post $post, Event $event)
     {
         $input_post = $request['post'];
-        $input_events = $request->events_array;
-
         $post->fill($input_post)->save();
+        
+        $input_event = $request['event'];
+        //input_eventにpost_idを追加したい
+        
+        
+        $event->fill($input_event)->save();
 
-        $post->events()->attach($input_events);
         return redirect('/');
         
     }

@@ -14,22 +14,25 @@
         </div>
         
         <div class='events'>
-            <h2>ADD YOUR TRAINING</h2>
-            
-            <h3>TYPE</h3>
             
             {{--eventsを作る--}}
             {{--event[name]の入力--}}
             
             <div class='add_event'>
-                @foreach($events as $event)
-                    <label>
-                        <input type="checkbox" value="{{ $event->id }}" name="events_array[]">
-                        {{$event->name}}
-                        </input>
-                    </label>
-                @endforeach
+                <h2>ADD YOUR TRAINING</h2>
+                <select name='event[name]'>
+                    @foreach($types as $type)
+                        <option value={{ $type->name }}>{{ $type->name }}</option>
+                    @endforeach
+                </select>
+                <input type='number' name='event[weight]' placeholder='WEIGHT'>
+                <input type='number' name='event[reps]' placeholder='REPS'>
+                <input type='number' name='event[sets]' placeholder='SETS'>
             </div> 
+            
+            <div class'added_events'>
+                {{--JavaScriptを書く--}}
+            </div>
         </div>
         
         <div class='user_id'>
