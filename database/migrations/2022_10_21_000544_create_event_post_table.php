@@ -17,6 +17,7 @@ class CreateEventPostTable extends Migration
             $table->integer('event_id')->unsigned();
             $table->integer('post_id')->unsigned();
             $table->primary(['event_id', 'post_id']);
+            $table->timestamps();
         });
     }
 

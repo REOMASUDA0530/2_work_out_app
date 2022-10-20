@@ -30,7 +30,7 @@
                 <input type='number' name='event[sets]' placeholder='SETS'>
             </div> 
             
-            <div class'added_events'>
+            <div class='added_events'>
                 {{--JavaScriptを書く--}}
             </div>
         </div>
