@@ -13,8 +13,6 @@ class eventsTableSeeder extends Seeder
     {
         $param = [
             'name' => Str::random(5),
-            'reps' => 1,
-            'sets' => 1,
             
         ];
             
