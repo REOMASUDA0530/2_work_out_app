@@ -36,13 +36,12 @@ class PostController extends Controller
     {
         $input_post = $request['post'];
         $post->fill($input_post)->save();
+        $post_id = array('post_id' => $post->id);
         
         $input_event = $request['event'];
-        //input_eventにpost_idを追加したい
-        
-        
+        $input_event += $post_id;
         $event->fill($input_event)->save();
-
+        
         return redirect('/');
         
     }
