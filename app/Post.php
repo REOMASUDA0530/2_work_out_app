@@ -21,7 +21,7 @@ class Post extends Model
     
     public function events()
     {
-        return $this->belongsToMany('App\Event');
+        return $this->hasMany('App\Event');
         
     }
     

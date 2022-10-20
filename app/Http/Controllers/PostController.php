@@ -6,7 +6,6 @@ use App\Post;
 use App\User;
 use App\Event;
 use App\Type;
-use App\EventPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,20 +32,16 @@ class PostController extends Controller
             );
     }
     
-    public function store(Request $request, Post $post, Event $event, EventPost $event_post)
+    public function store(Request $request, Post $post, Event $event)
     {
         $input_post = $request['post'];
         $post->fill($input_post)->save();
-        $post_id = $post->id;
+        $post_id = array('post_id' => $post->id);
         
         $input_event = $request['event'];
+        $input_event += $post_id;
         $event->fill($input_event)->save();
-        $event_id = $event->id;
         
-        //input_postとinput_eventからそれぞれidを取り出し、event_postに追加
-        $input_event_post = array('event_id' => $event_id, 'post_id' => $post_id);
-        $event_post->fill($input_event_post)->save();
-
         return redirect('/');
         
     }

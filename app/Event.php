@@ -11,6 +11,7 @@ class Event extends Model
         'weight',
         'reps',
         'sets',
+        'post_id',
         
     ];
     
