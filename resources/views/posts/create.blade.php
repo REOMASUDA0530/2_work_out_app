@@ -22,13 +22,13 @@
             {{--event[name]の入力--}}
             
             <div class='add_event'>
-                <select name='events_array[]'>
-                    @foreach ($types as $type)
-                        <option value={{ $type->id }}>{{ $type->name }}</option>
-                    @endforeach
-                </select>
-            
-                <input id='add' type='button' value='ADD'>
+                @foreach($events as $event)
+                    <label>
+                        <input type="checkbox" value="{{ $event->id }}" name="events_array[]">
+                        {{$event->name}}
+                        </input>
+                    </label>
+                @endforeach
             </div> 
         </div>
         
