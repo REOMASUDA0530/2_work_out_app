@@ -58,9 +58,14 @@ class PostController extends Controller
         return redirect('/');
     }
     
-    public function edit(Post $post)
+    public function edit(Post $post, Event $event, Type $type)
     {
-    return view('posts/edit')->with(['post' => $post]);
+        return view('posts/edit')->with(
+            ['post' => $post],
+            ['event' => $event],
+            ['types' => $type->get()],
+        
+            );
     }
     
     public function update(Request $request, Post $post)

@@ -13,12 +13,11 @@
             
             <div class='list'>
                 @foreach ($post->events as $event)
-                    <h4>{{ $event->name }} {{ $event->reps }} × {{ $event->sets }}</h4>
+                    <h4>{{ $event->name }} {{ $event->weight }} kg × {{ $event->reps }} reps × {{ $event->sets }} sets</h4>
                 @endforeach
             </div>
             
             <div class='user'>
-                <h6>POSTER</h6>
                 <h6>{{ $post->user->name }}</h6>
             </div>
             
