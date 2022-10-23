@@ -2,19 +2,20 @@
 
 use Illuminate\Database\Seeder;
 
-class body_parts_table_seeder extends Seeder
+class eventsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      *
      * @return void
      */
-    public function run()
+   public function run()
     {
         $param = [
-            'name' => Str::random(20),
+            'name' => Str::random(5),
+            
         ];
             
-        DB::table('body_parts')->insert($param);
+        DB::table('events')->insert($param);
     }
 }

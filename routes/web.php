@@ -17,6 +17,8 @@ Auth::routes();
 
 Route::get('/posts/create', 'PostController@create');
 
+Route::post('/posts', 'PostController@store');
+
 Route::get('/posts/{post}', 'PostController@show');
 
 Route::get('/posts/{post}/edit', 'PostController@edit');
@@ -25,3 +27,5 @@ Route::put('/posts/{post}', 'PostController@update');
 Route::delete('/posts/{post}', 'PostController@delete');
 
 Route::get('/users/{user}', 'UserController@index');
+
+Route::get('/training_events/{training_event}', 'Training_eventController@index');

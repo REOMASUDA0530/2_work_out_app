@@ -17,10 +17,9 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title', 50);
             $table->text('body');
-
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->nullable();
-            $table->softDeletes('deleted_at');
+            $table->timestamps();
+            $table->softDeletes();
+            
         });
     }
 

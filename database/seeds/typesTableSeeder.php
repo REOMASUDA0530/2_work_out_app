@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class training_events_table_seeder extends Seeder
+class typesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,9 +12,10 @@ class training_events_table_seeder extends Seeder
     public function run()
     {
         $param = [
-            'name' => Str::random(20),
+            'name' => Str::random(5),
+        
         ];
             
-        DB::table('training_events')->insert($param);
+        DB::table('types')->insert($param);
     }
 }
