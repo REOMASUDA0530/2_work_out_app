@@ -66,7 +66,7 @@
         }
     
         function add(){   
-            {{--event 連想配列の作成--}}
+            {{--event連想配列の作成--}}
             var event = {};
             event['name'] = document.getElementById('event_name').value;
             event['weight'] = document.getElementById('event_weight').value;
@@ -77,7 +77,7 @@
         }
         
         function proc(){
-            {{--events 配列の作成--}}
+            {{--events配列の作成--}}
             var events = [];
         }
         
