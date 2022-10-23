@@ -30,15 +30,15 @@
                 <input type='number' name='event[reps]' placeholder='REPS' id='event_reps'>
                 <input type='number' name='event[sets]' placeholder='SETS' id='event_sets'>
                 
-                <input type='button' value='ADD' onclick="show(); add(); ">
+                {{--<input type='button' value='ADD' onclick="show(); add(); ">--}}
             </div> 
             
-            <div class='added_events'>
+            {{--<div class='added_events'>
                 <h2>YOUR TRAINING</h2>
                 <p id='event_list'></p>
                 
-                {{--JavaScriptを書く--}}
-            </div>
+                {{--JavaScriptを書く--
+            </div>--}}
             
         </div>
         
