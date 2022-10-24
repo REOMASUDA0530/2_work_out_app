@@ -22,10 +22,10 @@
         @endif
     </div>
     
-    <div class='comment'>
+    {{--<div class='comment'>
         <input type='text' name='comment' id='comment'>
         <button type='submit'>SUBMIT</button>
-    </div>
+    </div>--}}
     
     <div class="footer">
         <a href="/">BACK</a>
