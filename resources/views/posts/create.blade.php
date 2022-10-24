@@ -26,7 +26,7 @@
                         <option value={{ $type->name }}>{{ $type->name }}</option>
                     @endforeach
                 </select>
-                <input type='number' name='event[weight]' placeholder='WEIGHT' id='event_weight'>
+                <input type='number' name='event[weight]' placeholder='WEIGHT &lpar;kg&rpar;' id='event_weight'>
                 <input type='number' name='event[reps]' placeholder='REPS' id='event_reps'>
                 <input type='number' name='event[sets]' placeholder='SETS' id='event_sets'>
                 
