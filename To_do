@@ -1,0 +1,8 @@
+What is needed
+
+１、indexとshowにトレーニングの内容も表示（リレーションのところを参照）。
+２、アカウントごとに自分の投稿だけ編集できるようにする。
+３、CSSかく。
+４、Googleでのサインイン機能
+５、eventも編集できるようにする
+６、eventsをpostcontrollerに送って処理（複数のeventを一つのpostに追加できる）
