@@ -38,15 +38,10 @@ class PostController extends Controller
         $post->fill($input_post)->save();
         $post_id = array('post_id' => $post->id);
         
-        $input_events = $_POST['events'];
+        $input_events = $request['events'];
         foreach ($input_events as $input_event):
-            $input_event += $post_id;
-            $event->fill($input_event)->save();
+            $event->create($input_event+$post_id);
         endforeach;
-        
-        //$input_event = $request['event'];
-        //$input_event += $post_id;
-        //$event->fill($input_event)->save();
         
         return redirect('/');
         
