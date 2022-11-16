@@ -35,4 +35,9 @@ class Post extends Model
         return $this::with('user') ->orderBy('updated_at', 'DESC') -> paginate($limit_count);
     }
     
+    public function getByPost()
+    {
+        return $this->events()->with('post')->orderBy('updated_at', 'DESC');
+    }
+    
 }
