@@ -16,17 +16,23 @@
                     <input type='text' name='post[body]' value="{{ $post->body }}">
                 </div>
             </div>
-            {{--<div class='event'>
-                <select name='event[name]' id='event_name'>
+            <div class='events'>
+                @foreach ($post->events as $event)
+                    <select name='event[name]'>
                     @foreach($types as $type)
-                        <option value={{ $type->name }}>{{ $type->name }}</option>
+                        <option value={{ $type->name }} 
+                            @if ($type->name == $event->name)
+                                selected
+                            @endif
+                        >{{ $type->name }}</option>
                     @endforeach
-                </select>
-                <input type='number' name='event[weight]' placeholder='WEIGHT' id='event_weight'>
-                <input type='number' name='event[reps]' placeholder='REPS' id='event_reps'>
-                <input type='number' name='event[sets]' placeholder='SETS' id='event_sets'>
-                
-            </div>--}}
+                    </select>
+                    <input type='number' name='event[weight]' value='{{ $event->weight }}'>
+                    <input type='number' name='event[reps]' value='{{ $event->reps }}'>
+                    <input type='number' name='event[sets]' value='{{ $event->sets }}'>
+                    <br>
+                @endforeach
+            </div>
             <input type="submit" value="UPDATE">
         </form>
         

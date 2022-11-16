@@ -21,9 +21,9 @@
                 <h6>{{ $post->user->name }}</h6>
             </div>
             
-            {{--<a class='user_name' href="/users/{{ $post->user->id }}">
+            <a class='user_name' href="/users/{{ $post->user->id }}">
                 {{ $post->user->name }}
-            </a>--}}
+            </a>
             
             <h6 class='created_at'>{{ $post->created_at }}</h6>
         @endforeach
