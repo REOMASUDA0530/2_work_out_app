@@ -40,4 +40,9 @@ class Post extends Model
         return $this->events()->with('post')->orderBy('updated_at', 'DESC');
     }
     
+    public function likes()
+    {
+        return $this->hasMany('App\Like');
+    }
+    
 }

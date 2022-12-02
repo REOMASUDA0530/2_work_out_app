@@ -29,3 +29,8 @@ Route::delete('/posts/{post}', 'PostController@delete');
 Route::get('/users/{user}', 'UserController@index');
 
 Route::get('/training_events/{training_event}', 'Training_eventController@index');
+
+
+// Likeボタン
+Route::get('/reply/like/{post}', 'LikeController@like')->name('like');
+Route::get('/reply/unlike/{post}', 'LikeController@unlike')->name('unlike');

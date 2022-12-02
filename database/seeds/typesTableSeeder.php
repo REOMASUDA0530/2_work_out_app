@@ -11,12 +11,73 @@ class typesTableSeeder extends Seeder
      */
     public function run()
     {
+        //胸
         $param = [
             'name' => 'Bench press',
         
         ];
             
         DB::table('types')->insert($param);
+        
+        $param = [
+            'name' => 'Dumbbell fly',
+        
+        ];
+            
+        DB::table('types')->insert($param);
+        
+        $param = [
+            'name' => 'Chest press',
+        
+        ];
+            
+        DB::table('types')->insert($param);
+        
+        $param = [
+            'name' => 'Cable crossover',
+        
+        ];
+            
+        DB::table('types')->insert($param);
+        
+        $param = [
+            'name' => 'Push up',
+        
+        ];
+            
+        DB::table('types')->insert($param);
+        
+        
+        
+        //腕
+        
+        $param = [
+            'name' => 'Arm curl',
+        
+        ];
+            
+        DB::table('types')->insert($param);
+        
+        //背中
+        
+        $param = [
+            'name' => 'Chinning',
+        
+        ];
+            
+        DB::table('types')->insert($param);
+        
+        
+        $param = [
+            'name' => 'Lat pull down',
+        
+        ];
+            
+        DB::table('types')->insert($param);
+        
+        
+        
+        //脚
         
         $param = [
             'name' => 'Squat',
@@ -33,25 +94,26 @@ class typesTableSeeder extends Seeder
         DB::table('types')->insert($param);
         
         $param = [
-            'name' => 'Dumbbell fly',
+            'name' => 'Leg curl',
         
         ];
             
         DB::table('types')->insert($param);
         
         $param = [
-            'name' => 'Arm curl',
+            'name' => 'Leg press',
         
         ];
             
         DB::table('types')->insert($param);
         
         $param = [
-            'name' => 'Push up',
+            'name' => 'Leg extention',
         
         ];
             
         DB::table('types')->insert($param);
+        
         
     }
 }
