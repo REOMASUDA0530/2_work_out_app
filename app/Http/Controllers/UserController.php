@@ -9,6 +9,9 @@ class UserController extends Controller
 {
     public function index(User $user)
     {
-        return view('posts/users_index')->with(['posts' => $user->getByUser()]);
+        return view('posts/users_index')->with([
+            'posts' => $user->getByUser(),
+            'user' => $user
+            ]);
     }
 }

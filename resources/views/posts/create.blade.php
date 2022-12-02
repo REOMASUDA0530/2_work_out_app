@@ -1,21 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<head>
+    
+</head>
 <body>
     <form action="/posts" method="POST" name='form'>
         @csrf
-        <div class='title'>
-            <h2>TITLE</h2>
-            <input type='text' name='post[title]' placeholder='TITLE' {{--value="{{ old('post.title') }}"--}}/>
-            {{--<p class="title__error" style="color:red">{{ $errors->first('post.title') }}</p>--}}
-        </div>
-        
-        <div class='body'>
-            <h2>BODY</h2>
-            <textarea name="post[body]" placeholder="BODY" {{--value="{{ old('post.body') }}"--}}></textarea>
-            {{--<p class="body__error" style="color:red">{{ $errors->first('post.body') }}</p>--}}
-        </div>
-        
         <div class='events'>
             <h2>ADD YOUR TRAINING</h2>
             <input type="button" value="＋" onclick='add_form()'>
@@ -26,7 +17,7 @@
                 <div>
                     <select name='events[0][name]' {{--value="{{ old('events[{{$i}}].name') }}"--}}>
                         @foreach($types as $type)
-                            <option value={{ $type->name }}>{{ $type->name }}</option>
+                            <option value='{{ $type->name }}'>{{ $type->name }}</option>
                         @endforeach
                     </select>
                     
@@ -42,6 +33,17 @@
                 
             </div> 
             
+        </div>
+        
+        {{--<div class='title'>
+            <h2>TITLE</h2>
+            <input type='text' name='post[title]' placeholder='TITLE' {{--value="{{ old('post.title') }}"/>
+            {{--<p class="title__error" style="color:red">{{ $errors->first('post.title') }}</p>
+        </div>--}}
+        <br>
+        <div class='body'>
+            <textarea name="post[body]" placeholder="LEAVE COMMENT IF YOU HAVE." {{-- value="{{ old('post.body') }}" --}}></textarea>
+            {{--<p class="body__error" style="color:red">{{ $errors->first('post.body') }}</p>--}}
         </div>
         
         <div class='user_id'>

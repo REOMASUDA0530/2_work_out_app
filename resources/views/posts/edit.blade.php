@@ -1,24 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>EDIT</h1>
-    <div class="content">
+    <h2>EDIT</h2>
+    <div class="edit">
         <form action="/posts/{{ $post->id }}" method="POST">
             @csrf
             @method('PUT')
-            <div class='post'>
-                <div class='title'>
-                    <h2>TITLE</h2>
-                    <input type='text' name='post[title]' value="{{ $post->title }}">
-                </div>
-                <div class='body'>
-                    <h2>BODY</h2>
-                    <input type='text' name='post[body]' value="{{ $post->body }}">
-                </div>
-            </div>
             <div class='events'>
+                @php
+                    $i = 0
+                @endphp
                 @foreach ($post->events as $event)
-                    <select name='event[name]'>
+                    <select name='events[<?php echo $i; ?>][name]'>
                     @foreach($types as $type)
                         <option value={{ $type->name }} 
                             @if ($type->name == $event->name)
@@ -27,11 +20,23 @@
                         >{{ $type->name }}</option>
                     @endforeach
                     </select>
-                    <input type='number' name='event[weight]' value='{{ $event->weight }}'>
-                    <input type='number' name='event[reps]' value='{{ $event->reps }}'>
-                    <input type='number' name='event[sets]' value='{{ $event->sets }}'>
+                    <input type='number' name='events[<?php echo $i; ?>][weight]' value='{{ $event->weight }}'>
+                    <input type='number' name='events[<?php echo $i; ?>][reps]' value='{{ $event->reps }}'>
+                    <input type='number' name='events[<?php echo $i; ?>][sets]' value='{{ $event->sets }}'>
+                    @php
+                        $i++
+                    @endphp
                     <br>
                 @endforeach
+            </div>
+            <div class='post'>
+                {{--<div class='title'>
+                    <h2>TITLE</h2>
+                    <input type='text' name='post[title]' value="{{ $post->title }}">
+                </div>--}}
+                <div class='body'>
+                    <input type='text' name='post[body]' value="{{ $post->body }}">
+                </div>
             </div>
             <input type="submit" value="UPDATE">
         </form>
