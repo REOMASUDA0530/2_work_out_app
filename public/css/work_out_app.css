@@ -1,0 +1,149 @@
+.post{
+    position: relative;
+    left: 20%;
+    width: 60%;
+
+}
+
+.post .user_name{
+    position: relative;
+    top: 0;
+    left: 20px;
+    z-index: 2;
+    
+    font-size: 25px;
+
+}
+
+.post .show{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    
+}
+
+.post .created_at{
+    position: absolute;
+    top: 12px;
+    right: 0;
+    
+}
+
+.post .list{
+    position: relative;
+    left: 10%;
+
+}
+
+.post .body{
+    position: relative;
+    left: 15%;
+
+}
+
+.post .horizontal_line{
+    position: relative;
+}
+
+.post .edit{
+    position: absolute;
+    right: 100px;
+    bottom: 0;
+
+}
+
+.post .like{
+    position: absolute;
+    right: 5px;
+    bottom: 12px;
+    z-index: 2;
+    
+}
+
+.footer{
+    text-align: center;
+}
+
+.user_name{
+    position: relative;
+    top: 0;
+    left: 26%;
+    
+}
+
+.under_user_name{
+    font-size: 5px;
+}
+
+.create {
+    position: relative;
+    left: 20%;
+    width: 60%;
+    
+}
+
+.create .head_massage{
+    position: relative;
+    left: 10px;
+}
+
+.create .space{
+    font-size: 5px;
+}
+
+.create .space_mini{
+    font-size: 2px;
+}
+
+.create .events{
+    position: relative;
+    margin: 5px;
+    
+}
+
+.create .events .add_event{
+    position: relative;
+    text-align: center;
+
+}
+
+.create .events .edit_event{
+    position: relative;
+    text-align: center;
+
+}
+
+.create .body{
+    position: relative;
+    left: 10%;
+    width: 80%;
+}
+
+
+.create .submit{
+    position: relative;
+    text-align: center;
+}
+
+.space_3{
+    font-size: 10px;
+}
+
+.pagenate{
+    position: relative;
+
+}
+
+.pagenate .links{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+
