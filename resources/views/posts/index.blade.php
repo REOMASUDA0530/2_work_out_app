@@ -1,13 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class='line_left'>
+        
+    </div>
+    <div class='line_right'>
+        
+    </div>
     <div class='posts'>
+        
         @foreach ($posts as $post)
-            <a class='user_name' href="/users/{{ $post->user->id }}">
-                {{ $post->user->name }}
-            </a>
             
             <div class='post'>
+                <a class='user_name' href="/users/{{ $post->user->id }}">
+                {{ $post->user->name }}
+                </a>
+                
                 <a class='show' href="/posts/{{ $post->id }}"></a>
                 
                 <h6 class='created_at'>{{ $post->created_at }}</h6>
@@ -20,12 +28,42 @@
                 
                 <p class='body'>{{ $post->body }}</p>
                 
+                {{--<div class='like'>
+
+                    @if($like)
+    <!-- 「LIKE」取消用ボタンを表示 -->
+	                    <a href="{{ route('unlike', $post) }}" class="btn btn-success btn-sm">
+	    	            LIKE
+		<!-- 「LIKE」の数を表示 -->
+		                <span class="badge">
+			                {{ $post->likes->count() }}
+		                </span>
+	                    </a>
+                    @else
+    <!-- 「LIKE」ボタンを表示 -->
+	                    <a href="{{ route('like', $post) }}" class="btn btn-secondary btn-sm">
+		                LIKE
+		<!-- 「LIKE」の数を表示 -->
+		                <span class="badge">
+			                {{ $post->likes->count() }}
+		                </span>
+	                    </a>
+                    @endif
+    
+                </div>--}}
+                
+                <hr class='horizontal_line'>
+                
             </div>
-            <hr>
+            
         @endforeach
     </div>
-    <div class='paginate'>
-        {{ $posts->links() }}
+    
+    
+    <div class='pagenate'>
+        <div class='links'>
+            {{ $posts->links() }}
+        </div>
     </div>
-
+    
 @endsection

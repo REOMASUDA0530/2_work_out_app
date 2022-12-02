@@ -1,10 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class='line_left'>
+        
+    </div>
+    <div class='line_right'>
+        
+    </div>
 
-    <h2>{{ $user->name }}'s RECORDS</h2>
+    <h2 class='user_name'>{{ $user->name }}'s RECORDS</h2>
+    <p class='under_user_name'></p>
     
     <div class='posts'>
+        
         @foreach ($posts as $post)
             <div class='post'>
                 <a class='show' href="/posts/{{ $post->id }}"></a>
@@ -19,8 +27,10 @@
                 
                 <p class='body'>{{ $post->body }}</p>
                 
+                <hr class='horizontal_line'>
+                
             </div>
-            <hr>
+            
         @endforeach
     </div>
     <div class='paginate'>

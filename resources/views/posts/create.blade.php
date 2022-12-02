@@ -5,31 +5,32 @@
     
 </head>
 <body>
-    <form action="/posts" method="POST" name='form'>
+    <form class='create' action="/posts" method="POST" name='form'>
         @csrf
+        <h2 class='head_massage'>YOUR TRAINING</h2>
+        <p class='space'> </p>
         <div class='events'>
-            <h2>ADD YOUR TRAINING</h2>
-            <input type="button" value="＋" onclick='add_form()'>
-            <input type="button" value="－" onclick='del_form()'>
-            <br>
+            <input type="button" value="ADD" onclick='add_form()'>
+            <input type="button" value="DELETE from BOTTOM" onclick='del_form()'>
+            <p class='space'> </p> 
             
             <div class='add_event' id='add_event'>
-                <div>
-                    <select name='events[0][name]' {{--value="{{ old('events[{{$i}}].name') }}"--}}>
+                {{--<div>
+                    <select name='events[0][name]' {{--value="{{ old('events[{{$i}}].name') }}">
                         @foreach($types as $type)
                             <option value='{{ $type->name }}'>{{ $type->name }}</option>
                         @endforeach
                     </select>
                     
-                    <input type='number' name='events[0][weight]' placeholder='WEIGHT &lpar;kg&rpar;' {{--value="{{ old('events[{{$i}}].weight') }}"--}}>
+                    <input type='number' name='events[0][weight]' placeholder='WEIGHT &lpar;kg&rpar;' {{--value="{{ old('events[{{$i}}].weight') }}">
 
-                    <input type='number' name='events[0][reps]' placeholder='REPS' {{--value="{{ old('events[{{$i}}].reps') }}"--}}>
+                    <input type='number' name='events[0][reps]' placeholder='REPS' {{--value="{{ old('events[{{$i}}].reps') }}">
 
-                    <input type='number' name='events[0][sets]' placeholder='SETS' {{--value="{{ old('events[{{$i}}].sets') }}"--}}>
-                    {{--<p class="event__error" style="color:red">{{ $errors->first('event') }}</p>--}}
+                    <input type='number' name='events[0][sets]' placeholder='SETS' {{--value="{{ old('events[{{$i}}].sets') }}">
+                    {{--<p class="event__error" style="color:red">{{ $errors->first('event') }}</p>
                     <br>
                     
-                </div>
+                </div>--}}
                 
             </div> 
             
@@ -40,20 +41,25 @@
             <input type='text' name='post[title]' placeholder='TITLE' {{--value="{{ old('post.title') }}"/>
             {{--<p class="title__error" style="color:red">{{ $errors->first('post.title') }}</p>
         </div>--}}
-        <br>
-        <div class='body'>
-            <textarea name="post[body]" placeholder="LEAVE COMMENT IF YOU HAVE." {{-- value="{{ old('post.body') }}" --}}></textarea>
+        <p class='space'> </p>
+        
+        <textarea class='body'name="post[body]" placeholder="LEAVE COMMENTS IF YOU HAVE." {{-- value="{{ old('post.body') }}" --}}></textarea>
             {{--<p class="body__error" style="color:red">{{ $errors->first('post.body') }}</p>--}}
-        </div>
         
         <div class='user_id'>
             <input type='hidden' name='post[user_id]' value={{ Auth::id() }}>
         </div>
         
-        <input type="submit" value="SUBMIT" id='submit'>
+        <div class='submit'>
+            <input type="submit" value="SUBMIT" id='submit'>
+        </div>
+        
     </form>
-    <div class="back">
-        <a href="/">BACK</a>
+    
+    <p class='space_3'> </p>
+    
+    <div class="footer">
+        <a href="/">HOME</a>
     </div>
     
     <script>

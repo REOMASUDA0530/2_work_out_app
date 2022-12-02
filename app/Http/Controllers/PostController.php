@@ -15,16 +15,18 @@ class PostController extends Controller
     public function index(Post $post)
     {
         return view('posts/index')->with(
-            ['posts' => $post->getPaginateByLimit()],
-            );
+            ['posts' => $post->getPaginateByLimit(),
+
+            ]);
     }
     
     public function show(Post $post)
     {
         $like = Like::where('post_id', $post->id)->where('user_id', auth()->user()->id)->first();
         return view('posts/show')->with(
-            ['post' => $post, 'like' => $like]
-            );
+            ['post' => $post, 
+            'like' => $like
+            ]);
     }
     
     public function create(Type $type)

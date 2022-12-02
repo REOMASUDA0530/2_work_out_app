@@ -16,17 +16,7 @@
         {{-- <h2 class='title'>{{ $post->title }}</h2> --}}
         <p class='body'>{{ $post->body }}</p>
 
-        
-        {{--<a class='user_name' href="/users/{{ $post->user->id }}">{{ $post->user->name }}</a>--}}
-    </div>
-    
-    <div class='edit'>
-        @if(Auth::id() == $post->user_id)
-            <p>[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
-        @endif
-    </div>
-    
-    <div class='like'>
+        <div class='like'>
 
         @if($like)
     <!-- 「LIKE」取消用ボタンを表示 -->
@@ -49,14 +39,25 @@
         @endif
     
     </div>
+    <br>
+    
+    @if(Auth::id() == $post->user_id)
+        <p class='edit'>[<a href="/posts/{{ $post->id }}/edit">EDIT</a>]</p>
+    @endif
+    
+        {{--<a class='user_name' href="/users/{{ $post->user->id }}">{{ $post->user->name }}</a>--}}
+    </div>
+    
+    
     
     {{--<div class='comment'>
         <input type='text' name='comment' id='comment'>
         <button type='submit'>SUBMIT</button>
     </div>--}}
+    <br>
     
     <div class="footer">
-        <a href="/">BACK</a>
+        <a href="/">HOME</a>
     </div>
     
 @endsection
