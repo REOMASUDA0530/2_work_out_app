@@ -7,7 +7,7 @@
 <body>
     <form class='create' action="/posts" method="POST" name='form'>
         @csrf
-        <h2 class='head_massage'>YOUR TRAINING</h2>
+        <h2 class='head_massage'>RECORD YOUR TRAINING</h2>
         <p class='space'> </p>
         <div class='events'>
             <input type="button" value="ADD" onclick='add_form()'>
