@@ -22,7 +22,7 @@
                 
                 @endguest
                 
-                <h6 class='created_at'>{{ $post->created_at }}</h6>
+                <h6 class='updated_at'>{{ $post->updated_at }}</h6>
 
                 <div class='list'>
                     @foreach ($post->events as $event)

@@ -64,7 +64,10 @@ class PostController extends Controller
     public function edit(Post $post, Event $event, Type $type)
     {
         return view('posts/edit')->with(
-            ['post' => $post, 'types' => $type->get(), 'events' => $post->getByPost()],
+            ['post' => $post,
+            'types' => $type->get(),
+            'events' => $post->getByPost()
+            ],
             
             );
     }

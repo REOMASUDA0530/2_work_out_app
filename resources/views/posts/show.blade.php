@@ -6,7 +6,7 @@
             {{ $post->user->name }}
         </a>
         
-        <h5 class='created_at'>{{ $post->created_at }}</h5>
+        <h5 class='updated_at'>{{ $post->updated_at }}</h5>
         <div class='list'>
             @foreach ($post->events as $event)
                 <h4>{{ $event->name }} {{ $event->weight }} kg × {{ $event->reps }} reps × {{ $event->sets }} sets</h4>
