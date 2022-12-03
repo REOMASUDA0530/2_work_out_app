@@ -7,11 +7,17 @@
             @csrf
             @method('PUT')
             <div class='events'>
-                <div class='edit_event'>
+                <input type="button" value="ADD" onclick='add_form()'>
+                <input type="button" value="DELETE from BOTTOM" onclick='del_form()'>
+                
+                <p class='space'> </p> 
+                
+                <div class='edit_event' id='edit_event'>
                 @php
                     $i = 0
                 @endphp
                 @foreach ($post->events as $event)
+                    <div>
                     <select name='events[<?php echo $i; ?>][name]'>
                     @foreach($types as $type)
                         <option value={{ $type->name }} 
@@ -28,6 +34,7 @@
                         $i++
                     @endphp
                     <br>
+                    </div>
                 @endforeach
                 </div>
             </div>
@@ -64,6 +71,8 @@
     </div>
     
     <script>
+        var i = <?php echo $i; ?>;
+    
         function deletePost(id) {
             'use strict'
             if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
@@ -72,5 +81,59 @@
             }
             
         }
+        
+        function add_form(){
+            var event_name = document.createElement('select');
+            event_name.name = `events[${i}][name]`;
+            
+            @foreach($types as $type)
+                var option = document.createElement('option');
+                
+                @php
+                    $val = $type->name;
+                    $val_js = json_encode($val);
+                @endphp
+                
+                var val = JSON.parse('<?php echo $val_js; ?>')
+                option.value = val;
+                option.text = val;
+                
+                event_name.appendChild(option);
+            @endforeach
+            
+            var event_weight = document.createElement('input');
+            event_weight.type = 'number';
+            event_weight.placeholder = 'WEIGHT \(kg\)';
+            event_weight.name = `events[${i}][weight]`;
+            
+            var event_reps = document.createElement('input');
+            event_reps.type = 'number';
+            event_reps.placeholder = 'REPS';
+            event_reps.name = `events[${i}][reps]`;
+            
+            var event_sets = document.createElement('input');
+            event_sets.type = 'number';
+            event_sets.placeholder = 'SETS';
+            event_sets.name = `events[${i}][sets]`;
+            
+            var input_event = document.createElement('div');
+            input_event.appendChild(event_name);
+            input_event.appendChild(event_weight);
+            input_event.appendChild(event_reps);
+            input_event.appendChild(event_sets);
+            
+            edit_event.appendChild(input_event);
+            
+            i += 1;
+            
+        }
+        
+        function del_form(){
+            edit_event.removeChild(edit_event.lastElementChild);
+            i -= 1;
+            
+        }
+        
+        
     </script>
 @endsection
