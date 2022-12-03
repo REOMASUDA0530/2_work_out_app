@@ -44,6 +44,7 @@
 			                {{ $post->likes->count() }}
 		                </span>
 	                    </a>
+	                    
                     @else
     <!-- 「LIKE」ボタンを表示 -->
 	                    <a href="{{ route('like', $post) }}" class="btn btn-secondary btn-sm">
