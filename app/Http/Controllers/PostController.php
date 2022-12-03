@@ -67,6 +67,8 @@ class PostController extends Controller
             ['post' => $post,
             'types' => $type->get(),
             'events' => $post->getByPost()
+            
+            
             ],
             
             );
