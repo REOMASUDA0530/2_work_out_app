@@ -15,7 +15,12 @@
         
         @foreach ($posts as $post)
             <div class='post'>
+                @guest
+                
+                @else
                 <a class='show' href="/posts/{{ $post->id }}"></a>
+                
+                @endguest
                 
                 <h6 class='created_at'>{{ $post->created_at }}</h6>
 
@@ -33,8 +38,10 @@
             
         @endforeach
     </div>
-    <div class='paginate'>
-        {{ $posts->links() }}
+    <div class='pagenate'>
+        <div class='links'>
+            {{ $posts->links() }}
+        </div>
     </div>
 @endsection
 </html>

@@ -16,7 +16,12 @@
                 {{ $post->user->name }}
                 </a>
                 
+                @guest
+                
+                @else
                 <a class='show' href="/posts/{{ $post->id }}"></a>
+                
+                @endguest
                 
                 <h6 class='created_at'>{{ $post->created_at }}</h6>
 

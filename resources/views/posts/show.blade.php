@@ -15,7 +15,10 @@
         
         {{-- <h2 class='title'>{{ $post->title }}</h2> --}}
         <p class='body'>{{ $post->body }}</p>
-
+        
+        @guest
+        
+        @else
         <div class='like'>
 
         @if($like)
@@ -38,7 +41,9 @@
 	        </a>
         @endif
     
-    </div>
+        </div>
+        
+        @endguest
     <br>
     
     @if(Auth::id() == $post->user_id)
